@@ -1,9 +1,14 @@
-In it your code should:
-    - Import mongoose.
-    - Read the database address from an ENVIRONMENT VARIABLE
-      (process.env.MONGO_URI) - do NOT hard-code the address.
-    - Use mongoose to connect to that address.
-    - Export the connection function so your app can call it
-      (look up "mongoose.connect" and exporting a function).
-    - Handle success and failure (log a clear message either way).
-    
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('MongoDB connected successfully');
+    } catch (error) {
+        console.error('MongoDB connection failed:', error.message);
+        process.exit(1);
+    }
+};
+
+module.exports = connectDB;
