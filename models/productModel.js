@@ -3,18 +3,18 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required:  true,
+        required:  [true, 'Please enter product name'],
         minlength: 3
     },
     price: {
         type: Number,
-        required: true,
+        required:  [true, 'Please enter product price'],
         min: 1
     },
     category: {
         type: String,
-        required: true,
-        enum: ['Fashion', 'Shoe', 'Books']
+        required: [true, 'Please choose product category'],
+        minlength: 3
     },
     stock: {
         type: Number,

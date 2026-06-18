@@ -53,5 +53,8 @@ cp .env.example .env
 
 - Node.js
 - Mongoose
+- dotenv
+- joi
+
 
 # build-database-schema
