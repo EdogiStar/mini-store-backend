@@ -15,6 +15,9 @@ const products = require('./routes/productRoute');
 
 app.use('/api/products', products);
 
+app.get('/', (req, res) => {
+    res.send('Mini Store Backend API is running...');
+});
 
 const startServer = async () => {
     try {
