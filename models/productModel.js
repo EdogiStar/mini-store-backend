@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required:  [true, 'Please enter product name'],
         minlength: 3
@@ -11,15 +11,9 @@ const productSchema = new mongoose.Schema({
         required:  [true, 'Please enter product price'],
         min: 1
     },
-    category: {
+    image: {
         type: String,
-        required: [true, 'Please choose product category'],
-        minlength: 3
-    },
-    stock: {
-        type: Number,
-        min: 0,
-        default: 1
+        required: [true, 'Please enter product image']
     }
 });
 

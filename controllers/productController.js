@@ -81,10 +81,9 @@ const deleteProduct = async (req, res) => {
 function validateProduct(product) {
 
     const schema = Joi.object({
-        name: Joi.string().required(),
+        title: Joi.string().required(),
         price: Joi.number().required(),
-        category: Joi.string().required(),
-        stock: Joi.number()
+        image: Joi.string().required(),
     });
 
     return schema.validate(product);
