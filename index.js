@@ -15,8 +15,10 @@ app.use(express.urlencoded({extended: false}));
 
 const port = process.env.PORT || 3000;
 const products = require('./routes/productRoute');
+const orders = require('./routes/orderRoute');
 
 app.use('/api/products', products);
+app.use('/api/orders', orders);
 
 app.get('/', (req, res) => {
     res.send('Mini Store Backend API is running...');
